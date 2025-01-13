@@ -9,9 +9,9 @@ const endPoint = "/posts/"
 export default function Post() {
     const { id } = useParams();
     const [post, setPost] = useState(null);
-    useEffect(getData, [id]);
+    useEffect(getPost, [id]);
 
-    function getData() {
+    function getPost() {
         axios.get(`${apiUrl}${endPoint}${id}`)
             .then((res) => {
                 console.log(res.data)
